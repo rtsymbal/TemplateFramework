@@ -41,9 +41,7 @@ namespace TemplateFramework.Helpers
                     var edgeDriver = new EdgeDriver(WebDriverSettings.EdgeOptions());
                     return new WebDriverListener(edgeDriver, logger);
                 default:
-                    throw new ArgumentOutOfRangeException(nameof(Configuration.WebDriver.BrowserName),
-                        Configuration.WebDriver.BrowserName,
-                        null);
+                    throw new ArgumentOutOfRangeException(nameof(Configuration.WebDriver.BrowserName), Configuration.WebDriver.BrowserName, null);
             }
         }
 
@@ -52,25 +50,19 @@ namespace TemplateFramework.Helpers
             switch (driverConfig.BrowserName)
             {
                 case Browser.Chrome:
-                    return new WebDriverListener(new RemoteWebDriver(new Uri(driverConfig.GridUrl),
-                        WebDriverSettings.ChromeOptionsForRemote(driverConfig)), logger);
+                    return new WebDriverListener(new RemoteWebDriver(new Uri(driverConfig.GridUrl), WebDriverSettings.ChromeOptionsForRemote(driverConfig)), logger);
 
                 case Browser.Firefox:
-                    return new WebDriverListener(new RemoteWebDriver(new Uri(driverConfig.GridUrl),
-                        WebDriverSettings.FirefoxOptions(driverConfig)), logger);
+                    return new WebDriverListener(new RemoteWebDriver(new Uri(driverConfig.GridUrl), WebDriverSettings.FirefoxOptions(driverConfig)), logger);
 
                 case Browser.InternetExplorer:
-                    return new WebDriverListener(new RemoteWebDriver(new Uri(driverConfig.GridUrl),
-                        WebDriverSettings.InternetExplorerOptions()), logger);
+                    return new WebDriverListener(new RemoteWebDriver(new Uri(driverConfig.GridUrl), WebDriverSettings.InternetExplorerOptions()), logger);
 
                 case Browser.Edge:
-                    return new WebDriverListener(new RemoteWebDriver(new Uri(driverConfig.GridUrl),
-                        WebDriverSettings.EdgeOptions()), logger);
+                    return new WebDriverListener(new RemoteWebDriver(new Uri(driverConfig.GridUrl), WebDriverSettings.EdgeOptions()), logger);
 
                 default:
-                    throw new ArgumentOutOfRangeException(nameof(Configuration.WebDriver.BrowserName),
-                        Configuration.WebDriver.BrowserName,
-                        null);
+                    throw new ArgumentOutOfRangeException(nameof(Configuration.WebDriver.BrowserName), Configuration.WebDriver.BrowserName, null);
             }
         }
     }
