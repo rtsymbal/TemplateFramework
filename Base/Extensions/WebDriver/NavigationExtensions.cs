@@ -14,5 +14,21 @@ namespace TemplateFramework.Base.Extensions.WebDriver
         {
             driver.Navigate().GoToUrl(url);
         }
+
+        public static void MaximizeScreen(this IWebDriver driver)
+        {
+            driver.Manage().Window.Maximize();
+        }
+
+        public static void Refresh(this IWebDriver driver)
+        {
+            driver.Navigate().Refresh();
+        }
+
+
+        public static string GetUrl(this IWebDriver driver)
+        {
+            return driver.Url;
+        }
     }
 }
