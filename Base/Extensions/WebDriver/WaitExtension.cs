@@ -2,6 +2,7 @@
 using OpenQA.Selenium.Support.UI;
 using System;
 using TemplateFramework.Helpers;
+using TemplateFramework.Settings;
 using ExpectedConditions = SeleniumExtras.WaitHelpers.ExpectedConditions;
 
 namespace TemplateFramework.Base.Extensions.WebDriver

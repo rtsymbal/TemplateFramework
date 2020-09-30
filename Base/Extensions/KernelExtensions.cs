@@ -2,7 +2,9 @@
 using OpenQA.Selenium.Chrome;
 using System;
 using System.IO;
+using System.Linq;
 using System.Reflection;
+using Ninject;
 using TemplateFramework.Base.Extensions.WebDriver;
 using TemplateFramework.Helpers;
 

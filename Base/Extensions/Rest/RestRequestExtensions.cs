@@ -29,6 +29,11 @@ namespace TemplateFramework.Base.Extensions.Rest
             return request.Execute(Method.PUT, statusCode);
         }
 
+        public static RestResponse Delete(this IRestRequest request, HttpStatusCode statusCode = HttpStatusCode.OK)
+        {
+            return request.Execute(Method.DELETE, statusCode);
+        }
+
         private static RestResponse Execute(this IRestRequest request, Method method, HttpStatusCode statusCode = HttpStatusCode.OK)
         {
             var client = RestFactory.CreateClient();
